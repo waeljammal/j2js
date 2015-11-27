@@ -1,0 +1,13 @@
+export class $class.name {
+#foreach( $field in $class.fields )
+#set ( $f = "()")
+#set ( $fv = "(value)")
+    get $field.name$f {
+        return this._$field.name;
+    }
+
+    set $field.name$fv {
+        this._$field.name = value;
+    }
+#end
+}
