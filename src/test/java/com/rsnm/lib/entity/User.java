@@ -53,7 +53,6 @@ public class User implements Principal {
     @Column(name = "token", length = 100, updatable = false)
     private String token;
 
-    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users")
     private Set<Account> accounts = new HashSet<Account>();
 

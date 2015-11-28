@@ -1,0 +1,8 @@
+export const $class.name = new Enum({
+#set($sep = "")
+#foreach( $field in $class.values )
+#if( $foreach.hasNext )#set($sep = ",")#end
+    $field : {value: $foreach.index, description: '$field'}$sep
+#set($sep = "")
+#end
+});

@@ -1,13 +1,13 @@
+#foreach( $field in $class.imports )
+import {$field} from './$field';
+#end
+
+/* @flow */
 export class $class.name {
 #foreach( $field in $class.fields )
-#set ( $f = "()")
-#set ( $fv = "(value)")
-    get $field.name$f {
-        return this._$field.name;
-    }
-
-    set $field.name$fv {
-        this._$field.name = value;
-    }
+#set ( $f = "()$field.jsType")
+#set ( $fv = "(value$field.jsType)")
+    get $field.name$f { return this._$field.name; }
+    set $field.name$fv { this._$field.name = value; }
 #end
 }
